@@ -1,19 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { RiSubtractFill } from "react-icons/ri";
 import { AiOutlinePlus } from "react-icons/ai";
-import { CountContext } from "./CountContext";
-
+import { CountContext } from "./CountContext"
+ 
 function PriceContainer() {
   const { count, setCount } = useContext(CountContext);
 
+const [total , setTotal] = useState(0)
 
-
+ 
   function handleDecrement(){ 
          
-    if(count > 0) { 
+    if(total > 0) { 
          
-        setCount(count - 1 )
+        setTotal(total - 1 )
     }
 }
 
@@ -33,11 +34,11 @@ function PriceContainer() {
           <div className="countProduct">
             <span>
               <AiOutlinePlus
-                onClick={() => setCount(count + 1)}
+                onClick={() => setTotal(total + 1)}
                 className="icon"
               />
             </span>
-            <span className="result">{count}</span>
+            <span className="result">{total}</span>
             <span>
               <RiSubtractFill
                 onClick={handleDecrement}
@@ -46,7 +47,7 @@ function PriceContainer() {
             </span>
           </div>
 
-          <button  onClick={() => setCount(count + 1)} className="btnCart">Add to cart</button>
+          <button   onClick={() => setCount(total + count)} className="btnCart">Add to cart</button>
         </div>
       </PriceContainerCart>
     </>

@@ -75,14 +75,14 @@ function SlideProducts() {
 
         <div className="containerGallery">
           {images.map((img, index) => (
-            <>
-              <img
+            <div key={index}>
+              <img   
                 className="img-select"
                 key={index}
                 src={img}
                 onClick={() => handleClick(index)}
               />
-            </>
+            </div>
           ))}
         </div>
       </div>
@@ -98,14 +98,14 @@ function SlideProducts() {
 
             <div className="containerGallery2">
               {images2.map((img, index) => (
-                <>
+                <div key={index}>
                   <img
                     className="img-select2"
                     key={index}
                     src={img}
                     onClick={() => handleClick2(index)}
                   />
-                </>
+                </div>
               ))}
             </div>
           </div>

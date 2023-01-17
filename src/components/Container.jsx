@@ -28,6 +28,18 @@ const ContainerMain = styled.div`
       width: 90%;
     }
   }
+
+  @media (min-width: 1350px) {
+    width: 80%;
+
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+
+    .subContainer {
+      width: 90%;
+    }
+  }
 `;
 
 export default Container;

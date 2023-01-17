@@ -58,7 +58,7 @@ function NavMenu() {
         </div>
       </MenuMobile>
 
-      {shopCart && <ModalCart />}
+      {shopCart && <ModalCart price={125}/>}
 
       {isOpen && <SideBar fecharMenu={() => setIsOpen(false)} />}
     </>
