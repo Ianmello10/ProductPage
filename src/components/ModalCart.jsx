@@ -20,25 +20,37 @@ function ModalCart(props) {
   return (
     <>
       <ModalShopCart>
-        <h1>Cart</h1>
-        <div className="info">
-          <img src={imgSlide} />
-          <div className="col">
-            <h2>Price Shoes</h2>
+        <h1>Cart</h1>{" "}
+        {totalPrice ? (
+           (
+            <>
+              <div className="info">
+                <img src={imgSlide} />
+                <div className="col">
+                  <h2>Price Shoes</h2>
 
-            <div className="row">
-              <p className="priceResult">
-                ${productPrice} x {count} = {totalPrice}
-              </p>
+                  <div className="row">
+                    <p className="priceResult">
+                      ${productPrice} x {count} = {totalPrice}
+                    </p>
 
-              <div>
-                <BsFillTrashFill className="trash" onClick={deleteAll} />
+                    <div>
+                      <BsFillTrashFill className="trash" onClick={deleteAll} />
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-        <button>Checkout</button>
+        <button>Checkout</button> 
+
+            </>
+          )
+        ) : (
+          <> 
+           <h3>Adicione um produto ao carrinho</h3> 
+            <span></span>
+           </>
+        )}
       </ModalShopCart>
     </>
   );
@@ -82,6 +94,19 @@ const ModalShopCart = styled.div`
   h1 {
     font-size: 18px;
     margin-top: 10px;
+  }
+
+  h3{ 
+    font-size: 19px;
+     margin-top: 30px;
+     text-align: center;
+  }
+
+  span{ 
+     display: block;
+     width: 90%;
+     margin:  25px auto;
+     border-bottom: solid 1px #9c9c9c;
   }
 
   .info {
